@@ -1,0 +1,28 @@
+{
+  "name": "lemonrun-share",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "compression": "^1.6.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "~2.3.3",
+    "express": "~4.13.1",
+    "grunt": "~0.4.5",
+    "grunt-contrib-imagemin": "~0.2.0",
+    "grunt-contrib-sass": ">=0.8",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-css-sprite": "*",
+    "jssha": "~1.6.0",
+    "morgan": "~1.6.1",
+    "promise": "*",
+    "q": "*",
+    "request": "*",
+    "serve-favicon": "~2.3.0"
+  }
+}

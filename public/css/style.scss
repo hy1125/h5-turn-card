@@ -1,0 +1,336 @@
+@charset "utf-8";
+@font-face {
+  /* font-properties */
+  font-family: Impact;
+  src: url('../font/ufonts.com_impact.ttf'),
+  url('../font/ufonts.com_impact.eot'); /* IE9 */
+}
+
+body {
+  font-family: -apple-system-font, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a, a:focus, a:active, a:visited {
+  text-decoration: none !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.num {
+  font-family: 'Impact';
+}
+
+.invite-wx-container{
+  width: 100%;
+  max-width: 700px;
+  background-color: #fffef9;
+  box-sizing: border-box;
+  margin: auto;
+  .card-box {
+    position: absolute;
+    z-index: 9;
+    width: 80%;
+    height: 40%;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    max-width: 500px;
+    letter-spacing: 1px;
+    .mail-box{
+      .mail{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        z-index: 1;
+        animation: mailCard 2s;
+        -webkit-animation: mailCard 2s;
+        opacity: 0;
+        img{
+          max-width: 100%;
+        }
+      }
+
+      &:before, &:after{
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        animation: mail 2s;
+        -webkit-animation: mail 2s;
+        opacity: 0;
+      }
+      &:before{
+        top: 5%;
+        background: url('../images/mail-top.png') center top no-repeat;
+        background-size: contain;
+        width: 10rem;
+        height: 10rem;
+        z-index: 0;
+      }
+      &:after{
+        top: 30%;
+        background: url('../images/mail-bottom.png') center bottom no-repeat ;
+        background-size: contain;
+        width: 11rem;
+        height: 7rem;
+        z-index: 2;
+      }
+
+    }
+    .box-3d{
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+
+      &.front{
+        z-index: 1;
+        transform:rotateX(180deg);
+        animation: front 4s;
+        -webkit-animation: front 4s;
+      }
+      &.back{
+        z-index: 2;
+        transform:rotateX(0deg);
+        animation: back 4s;
+        -webkit-animation: back 4s;
+      }
+      img{
+        width: 100%;
+      }
+    }
+  }
+  .footer{
+    position: absolute;
+    bottom: 7%;
+    max-width: 700px;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    z-index: 10;
+    .info-box {
+      text-align: center;
+      font-size: 0.6rem;
+      img {
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 50%;
+        box-shadow: 0 0 2px #666;
+      }
+      .name {
+        margin-bottom: 1rem;
+      }
+      .num {
+        font-size: 0.8rem;
+        color: #000;
+        letter-spacing: 0;
+      }
+      .invite-desc {
+        color: #000;
+        font-size: 0.65rem;
+        margin-top: 2rem;
+      }
+      .yun {
+        position: absolute;
+        z-index: 99;
+        height: 2rem;
+      }
+      .yun-left {
+        width: 3rem;
+        background: url(../images/yun-2.png) center center no-repeat;
+        background-size: contain;
+        margin: -0.5rem 0 0 -0.5rem;
+      }
+      .yun-right {
+        width: 2.8rem;
+        background: url(../images/yun-1.png) center center no-repeat;
+        background-size: contain;
+        right: -0.5rem;
+        top: -20%;
+      }
+    }
+    .arrow {
+      background: url(../images/arrow-down-yellow.png) center center no-repeat;
+      background-size: auto 1.1rem;
+      height: 1.1rem;
+      width: 100%;
+      margin: 1rem 0 0.5rem;
+    }
+    .btn {
+      display: block;
+      width: 7rem;
+      height: 1.7rem;
+      margin: 0 auto;
+      background: url(../images/invite-btn-bg.png) center bottom no-repeat;
+      background-size: 100%;
+      span {
+        display: block;
+        line-height: 1.4rem;
+        font-size: 0.6rem;
+        text-align: center;
+        background: #ffd600;
+        color: #fff;
+        border-radius: 4px;
+      }
+    }
+  }
+
+}
+@keyframes front {
+  0%{
+    opacity: 0;
+  }
+  49.9%{
+    opacity: 0;
+  }
+  50%   {
+    opacity: 1;
+    z-index: 2;
+    transform:rotateX(0deg);
+  }
+  100% {
+    z-index: 1;
+    transform:rotateX(180deg);
+  }
+}
+@-webkit-keyframes front {
+  0%{
+    opacity: 0;
+  }
+  49.9%{
+    opacity: 0;
+  }
+  50%   {
+    opacity: 1;
+    z-index: 2;
+    transform:rotateX(0deg);
+  }
+  100% {
+    z-index: 1;
+    transform:rotateX(180deg);
+  }
+}
+@keyframes back {
+  0%{
+    opacity: 0;
+  }
+  49.9%{
+    opacity: 0;
+  }
+  50%   {
+    opacity: 1;
+    z-index: 1;
+    transform:rotateX(180deg);
+    -webkit-transform:rotateX(180deg);
+  }
+  100% {
+    z-index: 2;
+    transform:rotateX(0deg);
+    -webkit-transform:rotateX(0deg);
+  }
+}
+@-webkit-keyframes back {
+  0%{
+    opacity: 0;
+  }
+  49.9%{
+    opacity: 0;
+  }
+  50%   {
+    opacity: 1;
+    z-index: 1;
+    transform:rotateX(180deg);
+    -webkit-transform:rotateX(180deg);
+  }
+  100% {
+    z-index: 2;
+    transform:rotateX(0deg);
+    -webkit-transform:rotateX(0deg);
+  }
+}
+@keyframes mail {
+  0%   {
+    opacity: 1;
+  }
+  20%   {
+    opacity: 1;
+  }
+  70%   {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@-webkit-keyframes mail {
+  0%   {
+    opacity: 1;
+  }
+  20%   {
+    opacity: 1;
+  }
+  70%   {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes mailCard {
+  0%   {
+    top: 25%;
+    width: 10rem;
+    opacity: 1;
+  }
+  20%   {
+    width: 10rem;
+  }
+  70%   {
+    top: 0;
+    width: 100%;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes mailCard {
+  0%   {
+    top: 25%;
+    width: 10rem;
+    opacity: 1;
+  }
+  20%   {
+    width: 10rem;
+  }
+  70%   {
+    top: 0;
+    width: 100%;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@media (max-height: 500px) {
+  .invite-wx-container .card-box{
+    top: 5%;
+  }
+}
+
+
